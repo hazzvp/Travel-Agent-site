@@ -1,4 +1,5 @@
 import ollama, requests
+import json, pathlib
 
 def get_weather(city: str) -> str:
     geo = requests.get("https://geocoding-api.open-meteo.com/v1/search",
@@ -16,6 +17,35 @@ def fuel_cost(total_km: float, km_per_litre: float, price_per_litre: float) -> s
     return f"LKR {total_km / km_per_litre * price_per_litre:,.0f}"
 
 tools = [get_weather, fuel_cost]
+BASE = pathlib.Path(__file__).parent
+
+def search_places(query: str, area: str = "") -> str:
+    """Search the local database of Sri Lankan places.
+
+    Args:
+        query: keywords such as 'waterfall', 'hike', 'cafe', 'calm'
+        area: optional town or region such as 'Kandy'
+    """
+    places = json.loads((BASE / "places.json").read_text(encoding="utf-8"))
+    words = query.lower().split()
+    scored = []
+    for p in places:
+        if area and area.lower() not in p.get("area", "").lower():
+            continue
+        text = " ".join(str(v) for v in p.values()).lower()
+        score = sum(w in text for w in words)
+        if score:
+            scored.append((score, p))
+    scored.sort(key=lambda x: -x[0])
+    top = [p for _, p in scored[:5]]
+    return json.dumps(top, ensure_ascii=False) if top else "No matching places in my data."
+
+def get_fuel_prices() -> str:
+    """Get the current fuel prices in Sri Lanka (LKR per litre)."""
+    return (BASE / "fuel_prices.json").read_text(encoding="utf-8")
+
+tools = [get_weather, fuel_cost, search_places, get_fuel_prices]
+
 funcs = {f.__name__: f for f in tools}
 def chat(messages: list) -> str:
     """Takes the conversation so far, returns the agent's final reply."""

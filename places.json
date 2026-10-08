@@ -1,2 +1,107 @@
-   {"name": "Lover's Leap Falls", "area": "Nuwara Eliya", "type": "waterfall",
-    "tip": "Go early morning for clear views", "from_kandy_km": 80}
+[
+  {
+    "name": "Lover's Leap Falls",
+    "area": "Nuwara Eliya",
+    "type": "waterfall",
+    "tip": "Go early morning for clear views",
+    "notes": "Short walk from town"
+  },
+  {
+    "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  },
+
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  },
+  {
+
+   "name": "Example Cafe",
+    "area": "Kandy",
+    "type": "cafe",
+    "tip": "Add a verified menu item and price here only if you checked it",
+    "notes": ""
+    
+  }
+]
