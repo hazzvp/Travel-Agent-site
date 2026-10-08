@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -16,5 +17,6 @@ def chat_endpoint(body: ChatIn):
     history.append({"role": "user", "content": body.message})
     return {"reply": chat(history)}
 
-# This must stay LAST, after all other routes
-app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="site")
+# Serve the built React site only if it has been built
+if os.path.isdir("frontend/dist"):
+    app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="site")
